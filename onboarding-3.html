@@ -31,7 +31,13 @@
           <a href="/onboarding-4" class="btn"><h3>Continue To Step 4/6</h3></a>
           <br />
           <br />
-          <h2>Our Business Manager ID:<br />556334809867863</h2>
+          <h2>Our Business Manager ID:</h2>
+          <h2 type="text" value="556334809867863" id="myID0">
+            556334809867863
+          </h2>
+          <br />
+          <input type="text" value="556334809867863" id="myID" />
+          <button class="btn" onclick="copyID()">Copy ID</button>
         </div>
         <div class="header__image">
           <video width="480" height="270" controls>
@@ -82,4 +88,20 @@
       </div>
     </footer>
   </body>
+  <script>
+    function copyID() {
+      // Get the text field
+      var copyText = document.getElementById("myID");
+
+      // Select the text field
+      copyText.select();
+      copyText.setSelectionRange(0, 99999); // For mobile devices
+
+      // Copy the text inside the text field
+      navigator.clipboard.writeText(copyText.value);
+
+      // Alert the copied text
+      alert("Copied the text: " + copyText.value);
+    }
+  </script>
 </html>
